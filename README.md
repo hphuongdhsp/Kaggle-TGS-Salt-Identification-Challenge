@@ -1,6 +1,6 @@
 # Kaggle-TGS-Salt-Identification-Challenge
 
-In this Repository, I story some papers which is useful for my model in this competition, TGS Salt Identification Challenge. 
+In this Repository, I story some papers which are useful for my model in the TGS Salt Identification Challenge. 
 
 ## References
 [1]. [Inverted Residuals and Linear Bottlenecks: Mobile Networks for Classification, Detection and Segmentation](https://arxiv.org/abs/1801.04381v2)  
