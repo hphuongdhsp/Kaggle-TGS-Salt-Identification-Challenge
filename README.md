@@ -1,6 +1,32 @@
 # Kaggle-TGS-Salt-Identification-Challenge
 
-In this Repository, I story some papers which are useful for my model in the TGS Salt Identification Challenge. 
+This Repository is my model in the TGS Salt Identification Challenge. https://www.kaggle.com/c/tgs-salt-identification-challenge
+
+# Description:
+This is a segmentation challenge, it means that we have the input is a picture, our mission is to find the mask in this picture. In particular, in this competition, we are given seismic images (see http://www.cpeo.org/techtree/ttdescript/seisim.htm), and we need to find where is  salt in the picture. You can find more informations in https://www.kaggle.com/c/tgs-salt-identification-challenge. 
+
+# Difficultys
+
+The images of this competition are seismic images and the data is not very well ( either  the quality or  the quantity), we have just 4000 images ( include more than 500 failures images). Some of them are blured and are maked brightness. Then we need to do argumentation to get more images. But the seismic images make us difficulty to do that. Only the left-right flip and shifting are meaning. 
+# Model
+To attact this challenge. Mainly, I used U-net model which includes encoding and decoding. With the encoding, I used the Resnet 34 with some modifications. I haved try some models to encoder (se resnet 50, dense net, ...), but Resnet 34 got the best perfomances. In decoding part, I used Hypercolumns, see https://arxiv.org/pdf/1411.5752.pdf. 
+
+# Training params
+I use Stochastic Gradient Descent with Warm Restarts, see https://arxiv.org/pdf/1705.08790.pdf 
+The Lovasz loss is used in this comps, see https://arxiv.org/pdf/1705.08790.pdf.   
+# Augmentation
+ The following augs work for me: 
+ left-right flip 
+ small rotation (-10,10)
+ Brightness, Constrass, 
+ Shift, Scaling
+ # Test time augment
+ Using only left-right flip for the test time augument
+ # Ensemble
+ I used the jacarrad score to make emsembling. Maybe this is one of the main difference with other competitor. In stead of taking the averge of the models, I calculed the jaccard score among them, this is one of technique I have learned. 
+ # What does not work
+ Dilated convolution ( from smallness of the size of data (101x101))
+ 
 
 ## References
 [1]. [Inverted Residuals and Linear Bottlenecks: Mobile Networks for Classification, Detection and Segmentation](https://arxiv.org/abs/1801.04381v2)  
