@@ -13,12 +13,17 @@ To attact this challenge. Mainly, I used U-net model which includes encoding and
 
 # Training params
 I use Stochastic Gradient Descent with Warm Restarts, see https://arxiv.org/pdf/1705.08790.pdf 
+
 The Lovasz loss is used in this comps, see https://arxiv.org/pdf/1705.08790.pdf.   
 # Augmentation
  The following augs work for me: 
+ 
  left-right flip 
+ 
  small rotation (-10,10)
+ 
  Brightness, Constrass, 
+ 
  Shift, Scaling
  # Test time augment
  Using only left-right flip for the test time augument
