@@ -447,4 +447,4 @@ def se_resnext101_32x4d(num_classes=1000, pretrained='imagenet'):
     if pretrained is not None:
         settings = pretrained_settings['se_resnext101_32x4d'][pretrained]
         initialize_pretrained_model(model, num_classes, settings)
-return model
+        return model
