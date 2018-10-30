@@ -5,7 +5,7 @@ This Repository is my model in the TGS Salt Identification Challenge. https://ww
 # Description:
 This is a segmentation challenge, it means that we have the input is a picture, our mission is to find the mask in this picture. In particular, in this competition, we are given seismic images (see http://www.cpeo.org/techtree/ttdescript/seisim.htm), and we need to find where is  salt in the picture. You can find more informations in https://www.kaggle.com/c/tgs-salt-identification-challenge. 
 
-# Difficultys
+# Difficulties
 
 The images of this competition are seismic images and the data is not very well ( either  the quality or  the quantity), we have just 4000 images ( include more than 500 failures images). Some of them are blured and are maked brightness. Then we need to do argumentation to get more images. But the seismic images make us difficulty to do that. Only the left-right flip and shifting are meaning. 
 # Model
