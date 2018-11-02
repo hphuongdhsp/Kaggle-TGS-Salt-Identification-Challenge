@@ -12,7 +12,7 @@ import torch
 from torch.autograd import Variable
 import torch.nn.functional as F
 import numpy as np
-from torch import nn
+
 try:
     from itertools import  ifilterfalse
 except ImportError: # py3k
