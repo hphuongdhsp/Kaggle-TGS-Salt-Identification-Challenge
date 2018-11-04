@@ -7,7 +7,7 @@ This is a segmentation challenge, it means that we have the input is a picture, 
 
 # Difficulties
 
-The images of this competition are seismic images and the data is not very well ( either  the quality or  the quantity), we have just 4000 images ( include more than 500 failures images). Some of them are blured and are maked brightness. Then we need to do argumentation to get more images. But the seismic images make us difficulty to do that. Only the left-right flip and shifting are meaning. 
+The images of this competition are seismic images and the data is not very good ( either  the quality or  the quantity), we have just 4000 images ( include more than 500 failures images). Some of them are blured and are maked brightness. Then we need to do argumentation to get more images. But the seismic images make us difficulty to do that. Only the left-right flip and shifting are meaning. 
 # Model
 To attact this challenge. Mainly, I used U-net model which includes encoding and decoding. With the encoding, I used the Resnet 34 with some modifications. I haved try some models to encoder (se resnet 50, dense net, ...), but Resnet 34 got the best perfomances. In decoding part, I used Hypercolumns, see https://arxiv.org/pdf/1411.5752.pdf. 
 
