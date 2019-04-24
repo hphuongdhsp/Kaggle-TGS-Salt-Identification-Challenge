@@ -1,15 +1,15 @@
 # Kaggle-TGS-Salt-Identification-Challenge
 
-This Repository is my model in the TGS Salt Identification Challenge. https://www.kaggle.com/c/tgs-salt-identification-challenge
+This Repository is a part of my model in the TGS Salt Identification Challenge. https://www.kaggle.com/c/tgs-salt-identification-challenge
 
 # Description:
-This is a segmentation challenge, it means that we have the input is a picture, our mission is to find the mask in this picture. In particular, in this competition, we are given seismic images (see http://www.cpeo.org/techtree/ttdescript/seisim.htm), and we need to find where salt is in the picture. You can find more informations in https://www.kaggle.com/c/tgs-salt-identification-challenge. 
+This is an image segmentation challenge.The goal of segmentation is to simplify and/or change the representation of an image into something that is more meaningful and easier to analyze. In particular, in this competition, we are given seismic images (see definiton of seismic image: http://www.cpeo.org/techtree/ttdescript/seisim.htm), and our mission is to find where is salt in the picture (find more informations in  https://www.kaggle.com/c/tgs-salt-identification-challenge). 
 
 # Difficulties
 
-The images of this competition are seismic images and the data is not very good ( either  the quality or  the quantity), we have just 4000 images ( include more than 500 failures images). Some of them are blured and are maked brightness. Then we need to do argumentation to get more images. But the seismic images make us difficulty to do that. Only the left-right flip and shifting are meaning. 
+The images of this competition are seismic images and the data isn't good ( either  the quality or  the quantity), we have just 4000 images (include more than 500 bad images). Some of them are blurred and are made the brightness. Becasuse of the data shortage, we need to do argumentation to get more images. The seismic images make us hard to do augumentation. Only the left-right flip and shifting augumentation are meaning. 
 # Model
-To attact this challenge. Mainly, I used U-net model which includes encoding and decoding. With the encoding, I used the Resnet 34 with some modifications. I haved try some models to encoder (se resnet 50, dense net, ...), but Resnet 34 got the best perfomances. In decoding part, I used Hypercolumns, see https://arxiv.org/pdf/1411.5752.pdf. 
+To approach this challenge, I used the U-net model which was developed by Olaf Ronneberger et al. for Bio Medical Image Segmentation. The architecture contains two paths. First path is the contraction path (also called as the encoder) which is used to capture the context in the image. The encoder is just a traditional stack of convolutional and max pooling layers. The second path is the symmetric expanding path (also called as the decoder) which is used to enable precise localization using transposed convolutions. In the encoder part, I used the Resnet 34 model (with some modifications). I tried several models in the encoder part (se-resnet 50, dense net, ...). Finally, Resnet 34 gave to me the best perfomance. Observing that some of images are zoomed in, then I used Hypercolumns architechture, see https://arxiv.org/pdf/1411.5752.pdf. 
 
 # Training params
 I use Stochastic Gradient Descent with Warm Restarts, see https://arxiv.org/pdf/1705.08790.pdf 
